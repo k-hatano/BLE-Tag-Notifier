@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BLE Tag Notifier</string>
+    <string name="title_activity_main">BLE Tag Notifier</string>
+    
+    <string name="preferences">Preferences</string>
+    <string name="history">History</string>
+
+</resources>
