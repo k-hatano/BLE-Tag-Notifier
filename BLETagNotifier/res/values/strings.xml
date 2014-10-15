@@ -3,8 +3,10 @@
 
     <string name="app_name">BLE Tag Notifier</string>
     <string name="title_activity_main">BLE Tag Notifier</string>
-    
     <string name="preferences">Preferences</string>
     <string name="history">History</string>
+    <string name="ble_tag">BLE Tag</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
