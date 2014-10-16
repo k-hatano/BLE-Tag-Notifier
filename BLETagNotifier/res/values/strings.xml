@@ -6,7 +6,9 @@
     <string name="preferences">Preferences</string>
     <string name="history">History</string>
     <string name="ble_tag">BLE Tag</string>
+    <string name="unregistered">Unregistered</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="bluetooth_unavailable">Bluetooth is Unavailable</string>
 
 </resources>
