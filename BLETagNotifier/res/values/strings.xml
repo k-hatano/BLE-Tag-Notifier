@@ -7,8 +7,10 @@
     <string name="history">History</string>
     <string name="ble_tag">BLE Tag</string>
     <string name="unregistered">Unregistered</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="bluetooth_unavailable">Bluetooth is Unavailable</string>
+    <string name="ble_tag_not_found">BLE Tag not found</string>
+    <string name="searching_ble_tag">Searching Ble Tag…</string>
 
 </resources>
