@@ -32,6 +32,7 @@ public final class R {
         public static final int history=0x7f040003;
         public static final int preferences=0x7f040002;
         public static final int searching_ble_tag=0x7f04000a;
+        public static final int stopped_searching_ble_tag=0x7f04000b;
         public static final int title_activity_main=0x7f040001;
         public static final int title_activity_settings=0x7f040006;
         public static final int unregistered=0x7f040005;

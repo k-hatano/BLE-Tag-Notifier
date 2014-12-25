@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,6 +15,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.ParcelUuid;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +33,8 @@ public class SettingsActivity extends Activity implements OnItemClickListener {
 	public final String UUID_ANP_SERVICE = "00001811-0000-1000-8000-00805f9b34fb";
 
 	private BluetoothAdapter btAdapter=null;
+
+	Handler mHandler = new Handler(); 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +112,7 @@ public class SettingsActivity extends Activity implements OnItemClickListener {
 					}
 				}
 			}).show();
-			
+
 			btAdapter.stopLeScan(mLeScanCallback);
 		}
 	};
@@ -116,8 +121,22 @@ public class SettingsActivity extends Activity implements OnItemClickListener {
 	protected void onActivityResult(int requestCode, int ResultCode, Intent date){
 		switch(requestCode){
 		case REQUEST_ENABLING_BLUETOOTH:{
+
 			Toast.makeText(this, getString(R.string.searching_ble_tag), Toast.LENGTH_LONG).show();
 			btAdapter.startLeScan(mLeScanCallback);
+			Timer timer = new Timer();
+			timer.schedule(new TimerTask(){
+				@Override
+				public void run() {
+					mHandler.post( new Runnable() {
+						public void run() {
+							Toast.makeText(SettingsActivity.this, getString(R.string.stopped_searching_ble_tag), Toast.LENGTH_LONG).show();
+						}
+					});
+					btAdapter.stopLeScan(mLeScanCallback);
+				}
+			},10000);
+
 			break;
 		}
 
